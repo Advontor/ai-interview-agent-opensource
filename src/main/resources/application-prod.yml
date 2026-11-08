@@ -1,0 +1,32 @@
+# Activate with --spring.profiles.active=prod. Credentials come from environment variables.
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/ai_interview?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+deepseek:
+  api-key: ${DEEPSEEK_API_KEY:}
+  base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+  model: ${DEEPSEEK_MODEL:deepseek-chat}
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    db-config:
+      id-type: auto
+logging:
+  level:
+    root: INFO
+    com.nanji.interview: INFO
+  file:
+    name: ${LOG_FILE:logs/ai-interview.log}

@@ -1,0 +1,288 @@
+[
+  {
+    "knowledgeId": "java_backend-001",
+    "title": "集合",
+    "content": "ArrayList通过数组保存元素，随机访问方便；增加元素可能触发扩容。选择集合应考虑查询、插入和删除的位置。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "EASY",
+    "tags": [
+      "Java",
+      "ArrayList",
+      "集合",
+      "扩容"
+    ],
+    "source": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/ArrayList.html"
+  },
+  {
+    "knowledgeId": "java_backend-002",
+    "title": "HashMap",
+    "content": "HashMap通过键的hashCode和equals查找映射。可变键在入表后改变相等性相关字段可能影响查找；并发修改应选择合适的同步方案。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "HashMap",
+      "哈希",
+      "集合",
+      "equals"
+    ],
+    "source": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html"
+  },
+  {
+    "knowledgeId": "java_backend-003",
+    "title": "线程安全",
+    "content": "共享可变状态需要考虑原子性、可见性和访问顺序。ConcurrentHashMap提供线程安全操作，但多个独立操作组成的业务流程仍需整体设计。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "并发",
+      "线程安全",
+      "ConcurrentHashMap"
+    ],
+    "source": "https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html"
+  },
+  {
+    "knowledgeId": "java_backend-004",
+    "title": "异常处理",
+    "content": "异常处理应区分可恢复的业务问题与程序错误。资源应可靠关闭，错误信息不能包含密钥。向上抛出异常时保留必要的失败原因。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "EASY",
+    "tags": [
+      "Java",
+      "异常",
+      "try",
+      "catch"
+    ],
+    "source": "https://docs.oracle.com/javase/tutorial/essential/exceptions/"
+  },
+  {
+    "knowledgeId": "java_backend-005",
+    "title": "Spring依赖注入",
+    "content": "依赖注入由容器提供对象需要的协作者。构造器注入可以明确必需依赖，并便于在测试中替换外部服务。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "EASY",
+    "tags": [
+      "Spring",
+      "依赖注入",
+      "构造器",
+      "Bean"
+    ],
+    "source": "https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-collaborators.html"
+  },
+  {
+    "knowledgeId": "java_backend-006",
+    "title": "事务边界",
+    "content": "事务应围绕需要原子提交的数据更新。耗时外部请求不宜长时间占用事务；并发修改需结合锁或版本校验，失败时保证一致的回滚边界。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "HARD",
+    "tags": [
+      "Spring",
+      "事务",
+      "回滚",
+      "并发",
+      "版本"
+    ],
+    "source": "https://docs.spring.io/spring-framework/reference/data-access/transaction.html"
+  },
+  {
+    "knowledgeId": "java_backend-007",
+    "title": "MySQL索引",
+    "content": "索引可以减少查询扫描，但会增加写入和存储成本。判断索引是否有效应结合查询条件、数据分布和执行计划，而非只看是否创建了索引。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "MySQL",
+      "索引",
+      "SQL",
+      "查询",
+      "执行计划"
+    ],
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/mysql-indexes.html"
+  },
+  {
+    "knowledgeId": "java_backend-008",
+    "title": "MySQL事务隔离",
+    "content": "隔离级别影响事务可见的数据和并发行为。分析读写冲突时应区分普通快照读与锁定读，并用并发事务复现场景。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "HARD",
+    "tags": [
+      "MySQL",
+      "隔离",
+      "事务",
+      "锁",
+      "并发"
+    ],
+    "source": "https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html"
+  },
+  {
+    "knowledgeId": "java_backend-009",
+    "title": "Redis缓存",
+    "content": "缓存是数据库之外的数据副本。设计缓存更新需要考虑数据库更新与缓存失效的顺序、失败恢复和过期时间；仅设置过期时间不能保证强一致性。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "Redis",
+      "缓存",
+      "一致性",
+      "过期",
+      "数据库"
+    ],
+    "source": "https://redis.io/docs/latest/develop/use/client-side-caching/"
+  },
+  {
+    "knowledgeId": "java_backend-010",
+    "title": "接口测试",
+    "content": "接口测试需要覆盖正常输入、边界输入、错误输入和外部服务失败。测试应校验响应和持久化结果，避免只判断是否返回成功。",
+    "targetRole": "JAVA_BACKEND",
+    "difficulty": "EASY",
+    "tags": [
+      "测试",
+      "接口",
+      "MockMvc",
+      "单元测试"
+    ],
+    "source": "https://docs.spring.io/spring-framework/reference/testing.html"
+  },
+  {
+    "knowledgeId": "frontend-001",
+    "title": "JavaScript闭包",
+    "content": "闭包让函数能访问其词法作用域中的变量。理解闭包要区分变量绑定与创建函数时的值，并关注回调生命周期带来的内存保留。",
+    "targetRole": "FRONTEND",
+    "difficulty": "EASY",
+    "tags": [
+      "JavaScript",
+      "闭包",
+      "作用域",
+      "函数"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"
+  },
+  {
+    "knowledgeId": "frontend-002",
+    "title": "异步Promise",
+    "content": "Promise表示异步结果。await暂停当前异步函数而非阻塞整个线程；独立任务可以并发执行，错误需要明确捕获和反馈。",
+    "targetRole": "FRONTEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "JavaScript",
+      "Promise",
+      "async",
+      "await",
+      "异步"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"
+  },
+  {
+    "knowledgeId": "frontend-003",
+    "title": "事件循环",
+    "content": "JavaScript运行时通过任务调度处理异步回调。分析执行顺序需要区分同步代码、Promise回调与后续任务，避免长任务阻塞交互。",
+    "targetRole": "FRONTEND",
+    "difficulty": "HARD",
+    "tags": [
+      "事件循环",
+      "微任务",
+      "JavaScript"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model"
+  },
+  {
+    "knowledgeId": "frontend-004",
+    "title": "Vue响应式",
+    "content": "Vue通过响应式状态驱动视图。派生值适合使用computed，副作用可以通过watch管理；状态变化与DOM更新时机需要区分。",
+    "targetRole": "FRONTEND",
+    "difficulty": "EASY",
+    "tags": [
+      "Vue",
+      "响应式",
+      "ref",
+      "computed",
+      "watch"
+    ],
+    "source": "https://vuejs.org/guide/essentials/reactivity-fundamentals.html"
+  },
+  {
+    "knowledgeId": "frontend-005",
+    "title": "Vue组件通信",
+    "content": "父组件可通过props向子组件传递数据，子组件通过事件表达变化。共享状态应明确所有权，避免多个组件隐式修改同一数据。",
+    "targetRole": "FRONTEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "Vue",
+      "props",
+      "组件",
+      "通信",
+      "emits"
+    ],
+    "source": "https://vuejs.org/guide/components/props.html"
+  },
+  {
+    "knowledgeId": "frontend-006",
+    "title": "TypeScript类型",
+    "content": "TypeScript提供静态类型检查，但不会自动校验网络返回数据。外部输入仍应做运行时校验，避免只用类型断言隐藏不确定性。",
+    "targetRole": "FRONTEND",
+    "difficulty": "EASY",
+    "tags": [
+      "TypeScript",
+      "类型",
+      "校验",
+      "接口"
+    ],
+    "source": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html"
+  },
+  {
+    "knowledgeId": "frontend-007",
+    "title": "浏览器缓存",
+    "content": "HTTP缓存行为由缓存响应头等条件控制。强缓存与条件请求解决不同问题，更新静态资源时需要考虑资源版本与缓存失效。",
+    "targetRole": "FRONTEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "HTTP",
+      "缓存",
+      "浏览器",
+      "Cache-Control"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching"
+  },
+  {
+    "knowledgeId": "frontend-008",
+    "title": "跨域请求",
+    "content": "跨域资源共享由浏览器执行。服务端需要明确允许的来源和请求条件；开发代理不能替代生产环境的访问控制。",
+    "targetRole": "FRONTEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "CORS",
+      "跨域",
+      "请求",
+      "浏览器"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+  },
+  {
+    "knowledgeId": "frontend-009",
+    "title": "前端性能",
+    "content": "性能排查应先测量加载、脚本执行与渲染瓶颈。可以按路由拆分代码、减少不必要更新，并验证优化前后的用户体验指标。",
+    "targetRole": "FRONTEND",
+    "difficulty": "HARD",
+    "tags": [
+      "性能",
+      "Vue",
+      "渲染",
+      "懒加载"
+    ],
+    "source": "https://vuejs.org/guide/best-practices/performance.html"
+  },
+  {
+    "knowledgeId": "frontend-010",
+    "title": "SSE事件流",
+    "content": "EventSource用于接收服务端事件。连接应处理关闭、错误和重连，事件ID可用于识别重复事件；它不是双向音频传输协议。",
+    "targetRole": "FRONTEND",
+    "difficulty": "MEDIUM",
+    "tags": [
+      "SSE",
+      "EventSource",
+      "事件",
+      "流式",
+      "重连"
+    ],
+    "source": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "format": "interview-rag-v1",
+  "sourceSha256": "2aff033d165285f67b25cc283143e18b885d26638cdc678ee298dc05c3e79a94",
+  "rowCount": 20000,
+  "sourceName": "interview_rag_structured_v1.csv"
+}

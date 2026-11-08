@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    # 统一接口前缀：前端经 Vite 代理 /api -> localhost:8080
+    context-path: /api
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接支持环境变量覆盖（默认值适用于本机开发，勿将真实密码提交到远端仓库）
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/ai_interview?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+deepseek:
+  api-key: ${DEEPSEEK_API_KEY:}
+  base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+  model: ${DEEPSEEK_MODEL:deepseek-chat}
+
+report:
+  pdf:
+    # 中文字体路径（可选，默认自动探测 Windows/Linux 常见中文字体）
+    font-path: ${REPORT_PDF_FONT_PATH:}
+
+# 讯飞语音识别配置
+xfyun:
+  app-id: ${XFYUN_APP_ID:}
+  api-key: ${XFYUN_API_KEY:}
+  api-secret: ${XFYUN_API_SECRET:}
