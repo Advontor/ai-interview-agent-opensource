@@ -1,0 +1,7 @@
+# Keep the source CSV byte-for-byte reproducible across Windows and Unix.
+# The knowledge metadata records its SHA-256 checksum.
+*.csv -text
+*.gz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
