@@ -1,0 +1,49 @@
+# Build and dependencies
+target/
+node_modules/
+dist/
+*.class
+*.jar
+*.war
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# IDE, assistant state and OS files
+.idea/
+.vscode/
+.claude/
+.codex/
+.workbuddy/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Runtime and private uploads
+logs/
+*.log
+uploads/
+recordings/
+*.wav
+*.pcm
+
+# Personal documents and demonstration recordings
+*.docx
+*.pptx
+*.pdf
+*.mp4
+求职材料/
+最终版/
+
+# Rebuild with scripts/gen_knowledge_chunk_sql.py
+sql/knowledge_chunk_data.sql
